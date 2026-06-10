@@ -12,7 +12,7 @@ app.get("/pay/:paymentId", (req, res) => {
   console.log(JSON.stringify(req.body, null, 2));
   const pa = req.params.paymentId;
   
-  res.redirect(`upi://pay?pa=${pa}`);
+  res.send(`redirect:upi://pay?pa=${pa}`);
 });
 
 app.listen(process.env.PORT, () => {
